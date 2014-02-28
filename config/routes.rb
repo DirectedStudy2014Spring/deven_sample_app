@@ -1,12 +1,31 @@
 SampleApp::Application.routes.draw do
-  #get "static_pages/home" becomes....
-  match '/home', to: 'static_pages#home',via: 'get'
+   #get "static_pages/home" becomes....
+  root  'static_pages#home'
+
   #get "static_pages/help"
   #get "static_pages/about"
-  #get "static_pages/contact"
+  #get "static_pages/contact" becomes...
   match '/help', to: 'static_pages#help',via: 'get'
+   #using 'match' automatically creates home_path and home_url
   match '/about', to: 'static_pages#about',via: 'get'
   match '/contact', to: 'static_pages#contact',via: 'get'
+
+
+
+
+  get "users/new"
+  match '/signup',  to: 'users#new',            via: 'get'
+
+
+
+
+
+
+
+
+
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
